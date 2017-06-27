@@ -1,14 +1,14 @@
-package projetCERFA.DAO.Implements;
+package projetCERFA.DAO.Impl;
 
 import java.util.List;
 
-import projetCERFA.DAO.Interface.TargetsDAO;
-import projetCERFA.Model.Targets;
+import projetCERFA.DAO.Int.FinancesDAO;
+import projetCERFA.Model.Finances;
 
-public class TargetsDAOImpl extends DAO<Targets> implements TargetsDAO{
+public class FinancesDAOImpl extends DAO<Finances> implements FinancesDAO{
 
 	@Override
-	public Targets add(Targets obj) {
+	public Finances add(Finances obj) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -20,19 +20,19 @@ public class TargetsDAOImpl extends DAO<Targets> implements TargetsDAO{
 	}
 
 	@Override
-	public Targets update(Targets obj) {
+	public Finances update(Finances obj) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Targets find(int id) {
+	public Finances find(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Targets> findAll() {
+	public List<Finances> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

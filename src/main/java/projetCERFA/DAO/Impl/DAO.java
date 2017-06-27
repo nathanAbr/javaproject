@@ -1,8 +1,8 @@
-package projetCERFA.DAO.Implements;
+package projetCERFA.DAO.Impl;
 
 import java.sql.Connection;
 
-import projetCERFA.DAO.Interface.IDAO;
+import projetCERFA.DAO.Int.IDAO;
 import projetCERFA.Database.ConnectionFactory;
 
 public abstract class DAO<T> implements IDAO<T>{

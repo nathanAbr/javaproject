@@ -1,8 +1,8 @@
-package projetCERFA.DAO.Implements;
+package projetCERFA.DAO.Impl;
 
 import java.util.List;
 
-import projetCERFA.DAO.Interface.TrainingsDAO;
+import projetCERFA.DAO.Int.TrainingsDAO;
 import projetCERFA.Model.Trainings;
 
 public class TrainingsDAOImpl extends DAO<Trainings> implements TrainingsDAO{

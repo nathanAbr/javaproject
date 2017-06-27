@@ -1,14 +1,14 @@
-package projetCERFA.DAO.Implements;
+package projetCERFA.DAO.Impl;
 
 import java.util.List;
 
-import projetCERFA.DAO.Interface.FinancesDAO;
-import projetCERFA.Model.Finances;
+import projetCERFA.DAO.Int.SpecialtiesDAO;
+import projetCERFA.Model.Specialties;
 
-public class FinancesDAOImpl extends DAO<Finances> implements FinancesDAO{
+public class SpecialtiesDAOImpl extends DAO<Specialties> implements SpecialtiesDAO{
 
 	@Override
-	public Finances add(Finances obj) {
+	public Specialties add(Specialties obj) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -20,19 +20,19 @@ public class FinancesDAOImpl extends DAO<Finances> implements FinancesDAO{
 	}
 
 	@Override
-	public Finances update(Finances obj) {
+	public Specialties update(Specialties obj) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Finances find(int id) {
+	public Specialties find(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Finances> findAll() {
+	public List<Specialties> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

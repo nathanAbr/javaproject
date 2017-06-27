@@ -1,14 +1,14 @@
-package projetCERFA.DAO.Implements;
+package projetCERFA.DAO.Impl;
 
 import java.util.List;
 
-import projetCERFA.DAO.Interface.SpecialtiesDAO;
-import projetCERFA.Model.Specialties;
+import projetCERFA.DAO.Int.TargetsDAO;
+import projetCERFA.Model.Targets;
 
-public class SpecialtiesDAOImpl extends DAO<Specialties> implements SpecialtiesDAO{
+public class TargetsDAOImpl extends DAO<Targets> implements TargetsDAO{
 
 	@Override
-	public Specialties add(Specialties obj) {
+	public Targets add(Targets obj) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -20,19 +20,19 @@ public class SpecialtiesDAOImpl extends DAO<Specialties> implements SpecialtiesD
 	}
 
 	@Override
-	public Specialties update(Specialties obj) {
+	public Targets update(Targets obj) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Specialties find(int id) {
+	public Targets find(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Specialties> findAll() {
+	public List<Targets> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

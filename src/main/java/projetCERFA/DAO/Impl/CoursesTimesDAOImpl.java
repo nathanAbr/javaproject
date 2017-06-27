@@ -1,8 +1,8 @@
-package projetCERFA.DAO.Implements;
+package projetCERFA.DAO.Impl;
 
 import java.util.List;
 
-import projetCERFA.DAO.Interface.CoursesTimesDAO;
+import projetCERFA.DAO.Int.CoursesTimesDAO;
 import projetCERFA.Model.CoursesTimes;
 
 public class CoursesTimesDAOImpl extends DAO<CoursesTimes> implements CoursesTimesDAO {

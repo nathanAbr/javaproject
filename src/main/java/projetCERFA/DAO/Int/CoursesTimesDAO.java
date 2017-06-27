@@ -1,4 +1,4 @@
-package projetCERFA.DAO.Interface;
+package projetCERFA.DAO.Int;
 
 import projetCERFA.Model.CoursesTimes;
 
