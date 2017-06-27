@@ -1,5 +1,8 @@
 package projetCERFA.DAO.Impl;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import projetCERFA.DAO.Int.FinancesDAO;
@@ -27,14 +30,39 @@ public class FinancesDAOImpl extends DAO<Finances> implements FinancesDAO{
 
 	@Override
 	public Finances find(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Finances finance = null;
+		try{
+			PreparedStatement stm = this.con.prepareStatement("SELECT libelle, idFinancement FROM financement WHERE idFinancement = ?");
+			stm.setInt(1, id);
+			ResultSet result = stm.executeQuery();
+			while(result.next()){
+				finance = new Finances(result.getString("libelle"));
+				finance.setId(result.getInt("idFinancement"));
+				break;
+			}
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+		return finance;
 	}
 
 	@Override
-	public List<Finances> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Finances> findAll() {
+		ArrayList<Finances> financeList = null;
+		try{
+			PreparedStatement stm = this.con.prepareStatement("SELECT libelle, idFinancement FROM financement");
+			ResultSet result = stm.executeQuery();
+			while(result.next()){
+				Finances finance = new Finances(result.getString("libelle"));
+				finance.setId(result.getInt("idFinancement"));
+				financeList.add(finance);
+			}
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+		return financeList;
 	}
 
 }
