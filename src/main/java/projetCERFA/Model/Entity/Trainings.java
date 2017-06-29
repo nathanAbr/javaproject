@@ -1,6 +1,9 @@
 package projetCERFA.Model.Entity;
 
+import java.util.ArrayList;
+
 import projetCERFA.Model.Int.ISpecialties;
+import projetCERFA.Model.Int.IStudents;
 import projetCERFA.Model.Int.ITargets;
 import projetCERFA.Model.Int.ITrainings;
 
@@ -9,7 +12,8 @@ public class Trainings implements ITrainings {
 	private int id;
 	private ITargets target;
 	private ISpecialties specialtie;
-	
+	private ArrayList<IStudents> studentsList;
+
 	public Trainings(String name, ITargets target, ISpecialties specialtie){
 		this.setName(name);
 		this.setTarget(target);
@@ -80,5 +84,7 @@ public class Trainings implements ITrainings {
 		this.id = id;
 	}
 	
-	
+	public ArrayList<IStudents> getStudentsList() {
+		return studentsList;
+	}	
 }

@@ -1,13 +1,17 @@
 package projetCERFA.Model.Entity;
 
+import java.util.ArrayList;
+
 import projetCERFA.Model.Int.ISpecialties;
+import projetCERFA.Model.Int.ITrainings;
 
 public class Specialties implements ISpecialties {
 	
 	private String nom;
 	private String code;
 	private int id;
-	
+	private ArrayList<ITrainings> trainingsList;
+
 	public Specialties(String nom, String code){
 		this.setNom(nom);
 		this.setCode(code);
@@ -60,5 +64,9 @@ public class Specialties implements ISpecialties {
 	public void setId(int id) {
 		this.id = id;
 	}	
+	
+	public ArrayList<ITrainings> getTrainingsList() {
+		return trainingsList;
+	}
 }
 

@@ -9,7 +9,6 @@ import java.util.List;
 
 import projetCERFA.DAO.Int.CoursesTimesDAO;
 import projetCERFA.Model.Entity.CoursesTimes;
-import projetCERFA.Model.Entity.Professors;
 import projetCERFA.Model.Int.ITrainings;
 import projetCERFA.Model.Proxy.TrainingsProxy;
 

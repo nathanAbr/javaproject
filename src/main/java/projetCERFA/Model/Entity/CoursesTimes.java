@@ -1,8 +1,11 @@
 package projetCERFA.Model.Entity;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import projetCERFA.Model.Int.ICoursesTimes;
+import projetCERFA.Model.Int.IProfessors;
+import projetCERFA.Model.Int.IStudents;
 import projetCERFA.Model.Int.ITrainings;
 
 public class CoursesTimes implements ICoursesTimes {
@@ -12,6 +15,8 @@ public class CoursesTimes implements ICoursesTimes {
 	private LocalDate endDate;
 	private boolean interne;
 	private ITrainings training;
+	private ArrayList<IStudents> studentsList;
+	private ArrayList<IProfessors> professorsList;
 	
 	public CoursesTimes(int id, LocalDate beginDate, LocalDate endDate, boolean interne, ITrainings training) {
 		this.id = id;
@@ -99,5 +104,13 @@ public class CoursesTimes implements ICoursesTimes {
 	@Override
 	public void setTraining(ITrainings training) {
 		this.training = training;
+	}
+	
+	public ArrayList<IStudents> getStudentsList() {
+		return studentsList;
+	}
+
+	public ArrayList<IProfessors> getProfessorsList() {
+		return professorsList;
 	}
 }

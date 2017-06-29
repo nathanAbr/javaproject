@@ -1,11 +1,15 @@
 package projetCERFA.Model.Entity;
 
+import java.util.ArrayList;
+
 import projetCERFA.Model.Int.ITargets;
+import projetCERFA.Model.Int.ITrainings;
 
 public class Targets implements ITargets {
 	private String label;
 	private int id;
-	
+	private ArrayList<ITrainings> trainingsList;
+
 	public Targets(String label){
 		this.setLabel(label);
 	}
@@ -41,4 +45,8 @@ public class Targets implements ITargets {
 	public void setId(int id) {
 		this.id = id;
 	}	
+	
+	public ArrayList<ITrainings> getTrainingsList() {
+		return trainingsList;
+	}
 }

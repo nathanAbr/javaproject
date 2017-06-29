@@ -1,11 +1,16 @@
 package projetCERFA.Model.Entity;
 
+import java.util.ArrayList;
+
+import projetCERFA.Model.Int.ICoursesTimes;
 import projetCERFA.Model.Int.IProfessors;
 
 public class Professors extends Personn implements IProfessors {
+	
 	private boolean interne;
 	private int id;
-	
+	private ArrayList<ICoursesTimes> coursesTimesList;
+
 	public Professors(String firstname, String secondname, boolean interne) {
 		super(firstname, secondname);
 		this.interne = interne;
@@ -41,5 +46,9 @@ public class Professors extends Personn implements IProfessors {
 	@Override
 	public void setId(int id){
 		this.id = id;
+	}
+	
+	public ArrayList<ICoursesTimes> getCoursesTimesList() {
+		return coursesTimesList;
 	}
 }
