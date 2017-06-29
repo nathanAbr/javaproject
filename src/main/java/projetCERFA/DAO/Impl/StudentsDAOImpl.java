@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import projetCERFA.DAO.Int.StudentsDAO;
 import projetCERFA.Model.Entity.Students;
+import projetCERFA.Model.Proxy.CoursesTimesProxy;
 
 public class StudentsDAOImpl extends DAO<Students> implements StudentsDAO{
 
@@ -81,13 +82,13 @@ public class StudentsDAOImpl extends DAO<Students> implements StudentsDAO{
 	public Students find(int id) {
 		Students student = null;
 		try{
-			PreparedStatement stm = this.con.prepareStatement("SELECT idPersonn, nom, prenom, interne FROM personne INNER JOIN stagiaire ON stagiaire.idStagiaire  = personne.idPersonne WHERE personne.idPersonne = ?");
+			PreparedStatement stm = this.con.prepareStatement("SELECT idPersonne, nom, prenom, stagiaire.interne, idCreneau FROM personne INNER JOIN stagiaire ON stagiaire.idStagiaire = personne.idPersonne  INNER JOIN creneaustagiaire cs ON cs.fk_stagiaire = idStagiaire INNER JOIN creneau ON creneau.idCreneau = cs.fk_creneau WHERE personne.idPersonne = ?");
 			stm.setLong(1, id);
 			ResultSet result = stm.executeQuery();
 			while(result.next()){
 				student = new Students(result.getString("nom"), result.getString("prenom"), result.getBoolean("interne"));
 				student.setId(result.getInt("idPersonne"));
-				break;
+				student.getCoursesTimesList().add(new CoursesTimesProxy(result.getInt("id")));
 			}
 			stm.close();
 		}

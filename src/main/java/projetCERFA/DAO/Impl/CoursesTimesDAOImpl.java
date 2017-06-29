@@ -10,6 +10,8 @@ import java.util.List;
 import projetCERFA.DAO.Int.CoursesTimesDAO;
 import projetCERFA.Model.Entity.CoursesTimes;
 import projetCERFA.Model.Int.ITrainings;
+import projetCERFA.Model.Proxy.ProfessorsProxy;
+import projetCERFA.Model.Proxy.StudentsProxy;
 import projetCERFA.Model.Proxy.TrainingsProxy;
 
 public class CoursesTimesDAOImpl extends DAO<CoursesTimes> implements CoursesTimesDAO{
@@ -32,14 +34,15 @@ public class CoursesTimesDAOImpl extends DAO<CoursesTimes> implements CoursesTim
 	public CoursesTimes find(int id) {
 		CoursesTimes courseTime = null;
 		try{
-			PreparedStatement stm = this.con.prepareStatement("SELECT idCreneau, dateDebut, dateFin, interne, fk_formation FROM creneau WHERE idCreneau = ?");
+			PreparedStatement stm = this.con.prepareStatement("SELECT idCreneau, dateDebut, dateFin, creneau.interne, fk_formation, fk_formateur, fk_stagiaire FROM creneau INNER JOIN creneaustagiaire cs ON cs.fk_creneau = creneau.idCreneau INNER JOIN stagiaire ON stagiaire.idStagiaire = cs.fk_stagiaire INNER JOIN creneauformateur cf ON cf.fk_creneau = creneau.idCreneau INNER JOIN formateur f ON f.idFormateur = cf.fk_formateur WHERE idCreneau = ?");
 			stm.setLong(1, id);
 			ResultSet result = stm.executeQuery();
 			while(result.next()){
 				ITrainings training = new TrainingsProxy(result.getInt("fk_formation"));
 				courseTime = new CoursesTimes(result.getInt("id"), result.getDate("dateDebut").toLocalDate(), result.getDate("dateFin").toLocalDate(), result.getBoolean("interne"), training);
 				courseTime.setId(result.getInt("idPersonne"));
-				break;
+				courseTime.getProfessorsList().add(new ProfessorsProxy(result.getInt("fk_formateur")));
+				courseTime.getStudentsList().add(new StudentsProxy(result.getInt("fk_stagiaire")));
 			}
 			stm.close();
 		}

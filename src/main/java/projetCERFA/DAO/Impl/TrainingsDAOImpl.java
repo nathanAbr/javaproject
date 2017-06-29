@@ -75,7 +75,7 @@ public class TrainingsDAOImpl extends DAO<Trainings> implements TrainingsDAO {
 	public Trainings find(int id) {
 		Trainings training = null;
 		try{
-			PreparedStatement stm = this.con.prepareStatement("SELECT idFormation, nom, fk_specialite, fk_objectif FROM formation WHERE formation.idFormation = ?");
+			PreparedStatement stm = this.con.prepareStatement("SELECT idFormation, nom, fk_specialite, fk_objectif, idStagiaire FROM formation WHERE formation.idFormation = ?");
 			stm.setLong(1, id);
 			ResultSet result = stm.executeQuery();
 			while(result.next()){
