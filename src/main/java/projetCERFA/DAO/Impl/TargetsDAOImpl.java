@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import projetCERFA.DAO.Int.TargetsDAO;
-import projetCERFA.Model.Targets;
-import projetCERFA.Model.Targets;
+import projetCERFA.Model.Entity.Targets;
+import projetCERFA.Model.Int.ITargets;
 
 public class TargetsDAOImpl extends DAO<Targets> implements TargetsDAO{
 

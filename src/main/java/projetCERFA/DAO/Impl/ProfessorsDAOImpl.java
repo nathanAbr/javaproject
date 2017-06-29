@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import projetCERFA.DAO.Int.ProfessorsDAO;
-import projetCERFA.Model.Professors;
+import projetCERFA.Model.Entity.Professors;
 
 public class ProfessorsDAOImpl extends DAO<Professors> implements ProfessorsDAO{
 

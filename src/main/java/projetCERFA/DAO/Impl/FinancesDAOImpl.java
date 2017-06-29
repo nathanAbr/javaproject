@@ -3,10 +3,9 @@ package projetCERFA.DAO.Impl;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.List;
 
 import projetCERFA.DAO.Int.FinancesDAO;
-import projetCERFA.Model.Finances;
+import projetCERFA.Model.Entity.Finances;
 
 public class FinancesDAOImpl extends DAO<Finances> implements FinancesDAO{
 

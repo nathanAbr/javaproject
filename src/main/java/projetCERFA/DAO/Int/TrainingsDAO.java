@@ -1,7 +1,7 @@
 package projetCERFA.DAO.Int;
 import java.util.List;
 
-import projetCERFA.Model.Trainings;
+import projetCERFA.Model.Entity.Trainings;
 
 public interface TrainingsDAO {
 	public Trainings add(Trainings training);

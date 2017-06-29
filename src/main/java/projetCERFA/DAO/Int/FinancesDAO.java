@@ -2,7 +2,7 @@ package projetCERFA.DAO.Int;
 
 import java.util.List;
 
-import projetCERFA.Model.Finances;
+import projetCERFA.Model.Entity.Finances;
 
 
 public interface FinancesDAO {

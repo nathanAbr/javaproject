@@ -6,9 +6,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import projetCERFA.DAO.Int.StudentsDAO;
-import projetCERFA.Model.Students;
+import projetCERFA.Model.Entity.Students;
 
-public class StudentsDAOImpl extends DAO<Students> implements StudentsDAO {
+public class StudentsDAOImpl extends DAO<Students> implements StudentsDAO{
 
 	public Students add(Students student) {
 		try{

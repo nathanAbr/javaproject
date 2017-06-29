@@ -3,11 +3,9 @@ package projetCERFA.DAO.Impl;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.List;
 
 import projetCERFA.DAO.Int.SpecialtiesDAO;
-import projetCERFA.Model.Specialties;
-import projetCERFA.Model.Specialties;
+import projetCERFA.Model.Entity.Specialties;
 
 public class SpecialtiesDAOImpl extends DAO<Specialties> implements SpecialtiesDAO{
 

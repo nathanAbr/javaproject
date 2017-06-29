@@ -2,7 +2,7 @@ package projetCERFA.DAO.Int;
 
 import java.util.List;
 
-import projetCERFA.Model.Students;
+import projetCERFA.Model.Entity.Students;
 
 public interface StudentsDAO {
 	public Students add(Students students);
